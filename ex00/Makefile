@@ -1,15 +1,15 @@
 .PHONY: all clean fclean re
 # Name of file
-NAME		=	conv
+NAME		=	module07
 
 # Name directory
 PATH_OBJ	=	objs
 
 #List of sources
-SRCS		=	main.cpp conv.cpp
+SRCS		=	main.cpp 
 
 OBJS		=	$(addprefix $(PATH_OBJ)/, $(SRCS:.cpp=.o))
-INCS		=	conv.hpp
+INCS		=	whatever.hpp
 
 # Commands of compilation
 COMP		=	clang++
