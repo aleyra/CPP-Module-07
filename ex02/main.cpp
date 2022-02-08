@@ -16,7 +16,6 @@ int main(int, char**)
     //SCOPE
     {
         Array<int> tmp = numbers;
-        std::cout << "test\n";//
         Array<int> test(tmp);
     }
 
@@ -50,5 +49,13 @@ int main(int, char**)
         numbers[i] = rand();
     }
     delete [] mirror;//
+
+    //for correction
+
+    {
+        Array<int>   t(0);
+    }
+
+
     return 0;
 }

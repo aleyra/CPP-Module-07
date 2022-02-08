@@ -8,17 +8,17 @@ class Array{
 public:
 	Array(){
 		this->_ptr = NULL;
-		this->_lenght = 0;
+		this->_length = 0;
 	}
 
 	Array(Array const &src){
-		std::cout << "constructor by copy\n";//
+		this->_ptr = NULL;
+		this->_length = 0;
 		*this = src;
 	}
 
 	Array(unsigned int n){
-		// std::cout << "constructor with n\n";//
-		this->_lenght = n;
+		this->_length = n;
 		this->_ptr = NULL;
 		if (n == 0)
 			return ;
@@ -26,46 +26,42 @@ public:
 	}
 
 	virtual ~Array(){
-		if (this->_lenght != 0)
+		if (this->_length != 0)
 			delete this->_ptr;
 	}
 
 	Array	&operator=(Array const &src){
-		std::cout << "here we are\n";//
-		if (this->_lenght != 0){
-			std::cout << "born to be kings\n";//
-			delete [] this->_ptr;
+		if (this->_length != 0){
+			delete this->_ptr;
 		}
-		std::cout << "we're the princes of the universe\n";//
-		this->_lenght = src._lenght;
-		this->_ptr = new T[src._lenght];
-		for (int i = 0; i < src._lenght; i++){
+		this->_length = src._length;
+		this->_ptr = new T[src._length];
+		for (int i = 0; i < src._length; i++){
 			this->_ptr[i] =  src._ptr[i];
 		}
 		return (*this);
 	}
 
 	T	&operator[](int i){
-		if(i >= this->_lenght || i < 0)
+		if(i >= this->_length || i < 0)
 			throw std::exception();
-		// std::cout << "call of " << i <<"th element\n";//
 		return(this->_ptr[i]);
 	}
 
 	const T	&operator[](int i) const{
-		if(i >= this->_lenght || i < 0)
+		if(i >= this->_length || i < 0)
 			throw std::exception();
 		return(this->_ptr[i]);
 	}
 
 	unsigned int const	&size(){
-		return (this->_lenght);
+		return (this->_length);
 	}
 
 protected:
 
 private:
-	int	_lenght;
+	int	_length;
 	T*	_ptr;
 
 };
