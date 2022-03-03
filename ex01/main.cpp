@@ -4,11 +4,12 @@
 
 int	main(){
 	{
+		std::srand(time(NULL));
 		unsigned int	size = 10;
 		int	array[size];
 
 		for(unsigned int i = 0; i < size; i++){
-			array[i] = rand() % 10;
+			array[i] = std::rand() % 10;
 		}
 
 		::iter(array, size, ::print1);
