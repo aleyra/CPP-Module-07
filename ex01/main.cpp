@@ -17,7 +17,7 @@ int	main(){
 		float arr[size];
 
 		for(unsigned int i = 0; i < size; i++){
-			arr[i] = rand() % 10;
+			arr[i] = std::rand() % 10;
 		}
 
 		::iter(arr, size, ::printbis);
